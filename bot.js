@@ -46,13 +46,6 @@ if(!msg.member.hasPermission('ADMINISTRATOR')) return msg.channel.send(':no_entr
   }
 });
 
-client.on('message', msg => {
-	if (msg.content === prefix + "on") {
-    if(!msg.member.hasPermission('ADMINISTRATOR')) return msg.channel.send(':no_entry: | `Adminstrator`للاسف ليس لديك صلاحية يجي ان يكون لديك برمشن!');		
-	let spam = msg.guild.channels.find('name', 'spam');
-    if (spam) return msg.reply(':envelope: | `spam`تم شييك على روم ');
-  }
-});
  
  
 client.on("message", msg => {  
@@ -60,6 +53,7 @@ if(msg.content.startsWith(prefix + `on`)) {
 if(!msg.member.hasPermission('ADMINISTRATOR')) return msg.channel.send(':no_entry: | `Adminstrator`للاسف ليس لديك صلاحية يجي ان يكون لديك برمشن!');
 let spam = msg.guild.channels.find('name', 'spam');
  if (!spam) return msg.channel.send('**`spam`يرجى اضافة روم باسم**' );
+ if (spam) return msg.reply(':envelope: | `spam`تم شييك على روم ');
 setInterval(function(){
 	spam.send('spam')
 }, 500);
@@ -78,12 +72,12 @@ setInterval(function(){
     client.on('message',async message => {
     if(message.content.startsWith(prefix + "off")) {
        if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply(':no_entry: | `Adminstrator`للاسف ليس لديك صلاحية يجي ان يكون لديك برمشن!');
-        message.channel.send('**جاري التوقف.**').then(msg => {
+        message.channel.send('**Stopping.**').then(msg => {
             setTimeout(() => {
-               msg.edit('**جاري التوقف..**');
+               msg.edit('**Stoppping..**');
             },1000);
             setTimeout(() => {
-               msg.edit('**تم سوف يتم اعادة التشغيل قريبا...**');
+               msg.edit('**Done i will relunch early...**');
             },2000);
         });
         setTimeout(() => {
