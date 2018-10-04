@@ -1,0 +1,100 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const moment = require('moment');
+const getYoutubeID = require('get-youtube-id');
+const fetchVideoInfo = require('youtube-info');
+const YouTube = require('simple-youtube-api');
+const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
+const queue = new Map();
+const ytdl = require('ytdl-core');
+const fs = require('fs');
+const gif = require("gif-search");
+const prefix = "spam"
+
+
+
+
+
+
+
+
+
+
+
+
+ client.on("message", message => {
+ if (message.content === prefix + "help-use") {
+  const embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setDescription(`
+─════════════ {✯SpamHelp♧✯} ════════════─
+❖-|spamon| حتى تشغل السبام
+❖-|spamoff|حتى توقف السبام
+❖-|spamcome|حتى تثبت الحساب بروم صوتي
+─════════════ {✯Spam Help♧✯} ════════════─
+      `)
+   message.channel.sendEmbed(embed)
+    }
+   });
+
+
+client.on('message', msg => {
+  if (msg.content === prefix + "help") {
+    msg.reply(':envelope: | تم ارسال الرساله في الخاص');
+  }
+});
+
+client.on('message', msg => {
+	if (msg.content === prefix + "on") {
+	let spam = msg.guild.channels.find('name', 'spam');
+    if (spam) return msg.reply(':envelope: | `spam`تم شييك على روم ');
+  }
+});
+ 
+ 
+client.on("message", msg => {  
+if(msg.content.startsWith(prefix + `on`)) {
+if(!msg.member.hasPermission('ADMINISTRATOR')) return msg.channel.send(':no_entry: | `Adminstrator`للاسف ليس لديك صلاحية يجي ان يكون لديك برمشن!');
+let spam = msg.guild.channels.find('name', 'spam');
+ if (!spam) return msg.channel.send('**`spam`يرجى اضافة روم باسم**' );
+setInterval(function(){
+	spam.send('spam')
+}, 500);
+setInterval(function(){
+	spam.send('hi')
+}, 1000);
+setInterval(function(){
+	spam.send('i like this')
+}, 1500);	
+	}
+});
+	  
+	  
+
+
+    client.on('message',async message => {
+    if(message.content.startsWith(prefix + "off")) {
+       if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply(':no_entry: | `Adminstrator`للاسف ليس لديك صلاحية يجي ان يكون لديك برمشن!');
+        message.channel.send('**Stopping.**').then(msg => {
+            setTimeout(() => {
+               msg.edit('**Stoppping..**');
+            },1000);
+            setTimeout(() => {
+               msg.edit('**Done i will relunch early...**');
+            },2000);
+        });
+        setTimeout(() => {
+            client.destroy();
+client.login(process.env.BOT_TOKEN);
+        },3000);
+    }
+});
+
+
+client.on('message', message => {
+ if(message.content.startsWith(prefix + "come")) {
+message.member.voiceChannel.join();
+}
+});
+
+client.login(process.env.BOT_TOKEN);
