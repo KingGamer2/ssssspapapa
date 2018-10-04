@@ -39,13 +39,6 @@ if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('
    });
 
 
-client.on('message', msg => {
-  if (msg.content === prefix + "help") {
-if(!msg.member.hasPermission('ADMINISTRATOR')) return msg.channel.send(':no_entry: | `Adminstrator`للاسف ليس لديك صلاحية يجي ان يكون لديك برمشن!');	  
-    msg.reply(':envelope: | تم ارسال الرساله في الخاص');
-  }
-});
-
  
  
 client.on("message", msg => {  
