@@ -39,6 +39,34 @@ if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('
    });
 
 
+
+
+
+
+
+client.on('message', message => {
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+let args = message.content.split(" ").slice(1);
+if(!args) return message.channel.send('${prefix}say <words>');	
+
+if (command == "say") {
+if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.reply("*لا تملك الصلاحيات المطلوبه**");
+
+message.channel.send(args.join("  "))
+    message.delete();
+  }
+});
+
+
+
+
+
+
  
  
 client.on("message", msg => {  
