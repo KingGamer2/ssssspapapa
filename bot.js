@@ -32,6 +32,10 @@ if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('
 ❖-|spamon| حتى تشغل السبام
 ❖-|spamoff|حتى توقف السبام
 ❖-|spamcome|حتى تثبت الحساب بروم صوتي
+❖-|spamon| حتى تشغل السبام
+❖-|spamsay|حتى تتحكم بلبوت من حسابك 
+  **spamsay #creditمثلا**
+  **#credit البوت يقول**   
 ─════════════ {✯Spam Help♧✯} ════════════─
       `)
    message.channel.sendEmbed(embed)
