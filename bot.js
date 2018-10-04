@@ -38,14 +38,6 @@ if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('
     }
    });
 
-
-client.on('message', msg => {
-  if (msg.content === prefix + "help") {
-if(!msg.member.hasPermission('ADMINISTRATOR')) return msg.channel.send(':no_entry: | `Adminstrator`للاسف ليس لديك صلاحية يجي ان يكون لديك برمشن!');	  
-    msg.reply(':envelope: | تم ارسال الرساله في الخاص');
-  }
-});
-
  
  
 client.on("message", msg => {  
@@ -53,7 +45,7 @@ if(msg.content.startsWith(prefix + `on`)) {
 if(!msg.member.hasPermission('ADMINISTRATOR')) return msg.channel.send(':no_entry: | `Adminstrator`للاسف ليس لديك صلاحية يجي ان يكون لديك برمشن!');
 let spam = msg.guild.channels.find('name', 'spam');
  if (!spam) return msg.channel.send('**`spam`يرجى اضافة روم باسم**' );
- if (spam) return msg.reply(':envelope: | `spam`تم شييك على روم ');
+ if (spam) return msg.reply(':envelope: | **`spam`تم شييك على روم **');
 setInterval(function(){
 	spam.send('spam')
 }, 500);
