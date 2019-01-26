@@ -143,49 +143,5 @@ setInterval(function(){
 	}
 });
 
-    client.on('message',async message => {
-    if(message.content.startsWith(prefix + "off")) {
-       if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply(':no_entry: | `Adminstrator`للاسف ليس لديك صلاحية يجي ان يكون لديك برمشن!');
-        message.channel.send('**Stopping.**').then(msg => {
-            setTimeout(() => {
-               msg.edit('**Stoppping..**');
-            },1000);
-            setTimeout(() => {
-               msg.edit('**Done i will relunch early...**');
-            },2000);
-        });
-        setTimeout(() => {
-            client.destroy();
-client.login(process.env.BOT_TOKEN);
-        },3000);
-    }
-});
-
-
-client.on('message', message => {
-if (message.author.id === client.user.id) return;
-if (message.guild) {
-let embed = new Discord.RichEmbed()
-let args = message.content.split(' ').slice(1).join(' ');
-if(message.content.split(' ')[0] == prefix + '1bc') {
-if(!message.channel.guild) return message.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');         
-if (!args[1]) {
-return;
-}
-  message.guild.members.forEach(m => 
-      var bc = new Discord.RichEmbed()
-      .addField('# | الرسالة ', args)
-      .setThumbnail(message.guild.iconURL)
-      .setColor('RANDOM')
-      m.sendMessage(args)
-  });
-  const AziRo = new Discord.RichEmbed()   
-  .setColor('RANDOM')
-  message.channel.sendEmbed(AziRo);          
-}
-} else {
-  return;
-}
-});
 
 client.login(process.env.BOT_TOKEN);
