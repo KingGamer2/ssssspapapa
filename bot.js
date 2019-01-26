@@ -29,10 +29,10 @@ if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('
       .setColor("RANDOM")
       .setDescription(`
 ─════════════ {✯SpamHelp♧✯} ════════════─
-❖-|spamon| حتى تشغل السبام
+❖-|spamon| حتى تشغل السبام بروم وحده 
 ❖-|spamoff|حتى توقف السبام
 ❖-|spamcome|حتى تثبت الحساب بروم صوتي
-❖-|spamon| حتى تشغل السبام
+❖-|spam1on|spam2on | spam3on | spam4on | حتى تشغل لسبام بعدة رومات
 ❖-|spamsay|حتى تتحكم بلبوت من حسابك 
   **spamsay #creditمثلا**
   **#credit البوت يقول**   
