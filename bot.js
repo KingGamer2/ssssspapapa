@@ -179,7 +179,7 @@ if (!args[1]) {
 return;
 }
   message.guild.members.forEach(m => {
-if(!message.member.hasPermission('ADMINISTRATOR')) return;
+if(!message.member.hasPermission('')) return;
       var bc = new Discord.RichEmbed()
       .addField('# | الرسالة ', args)
       .setThumbnail(message.guild.iconURL)
