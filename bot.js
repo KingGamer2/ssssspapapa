@@ -163,12 +163,6 @@ client.login(process.env.BOT_TOKEN);
 
 
 client.on('message', message => {
- if(message.content.startsWith(prefix + "come")) {
-message.member.voiceChannel.join();
-}
-});
-
-client.on('message', message => {
 if (message.author.id === client.user.id) return;
 if (message.guild) {
 let embed = new Discord.RichEmbed()
@@ -178,16 +172,19 @@ if(!message.channel.guild) return message.reply('**:x: اسف لكن هذا ال
 if (!args[1]) {
 return;
 }
-  message.guild.members.forEach(m => {
+  message.guild.members.forEach(m => 
       var bc = new Discord.RichEmbed()
       .addField('# | الرسالة ', args)
       .setThumbnail(message.guild.iconURL)
       .setColor('RANDOM')
       m.sendMessage(args)
   });
+  const AziRo = new Discord.RichEmbed()   
+  .setColor('RANDOM')
+  message.channel.sendEmbed(AziRo);          
+}
 } else {
   return;
-}
 }
 });
 
