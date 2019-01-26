@@ -186,11 +186,6 @@ if(!message.member.hasPermission('ADMINISTRATOR')) return;
       .setColor('RANDOM')
       m.sendMessage(args)
   });
-         if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply(":x: **ليس لديك صلاحية للنشر هنا**");
-  const AziRo = new Discord.RichEmbed()   
-  .setColor('RANDOM')
-  message.channel.sendEmbed(AziRo);          
-}
 } else {
   return;
 }
